@@ -1,0 +1,20 @@
+Acetaminophen (Paracetamol) Clinical Monograph
+URL: https://medlineplus.gov/druginfo/meds/a681004.html
+
+## Indications and Usage
+Acetaminophen is used for the temporary relief of mild to moderate pain and for the reduction of fever. It has analgesic and antipyretic activity but little anti-inflammatory effect, so it is not a substitute for an NSAID when inflammation is the target.
+
+## Dosage and Administration
+The usual adult oral dose is 500 to 1000 mg every 4 to 6 hours as needed. The maximum recommended dose for adults is 4000 mg (4 grams) in any 24-hour period from all sources combined. A single dose should not exceed 1000 mg. In patients with chronic alcohol use or hepatic risk factors, clinicians commonly limit total daily intake to 3000 mg or less.
+
+## Contraindications
+Acetaminophen is contraindicated in patients with severe hepatic impairment or severe active liver disease, and in patients with known hypersensitivity to acetaminophen.
+
+## Warnings and Precautions
+Overdose of acetaminophen can cause acute hepatic necrosis and liver failure, which may be fatal. The risk is increased by chronic alcohol consumption, fasting, and malnutrition. The specific antidote for acetaminophen poisoning is N-acetylcysteine, which is most effective when given within 8 to 10 hours of ingestion. Patients should be warned not to combine multiple products containing acetaminophen.
+
+## Drug Interactions
+Chronic use of acetaminophen may enhance the anticoagulant effect of warfarin and increase the INR; occasional standard doses are generally considered safe. Concurrent alcohol use increases the risk of hepatotoxicity.
+
+## Adverse Reactions
+At therapeutic doses adverse reactions are rare. Overdose produces nausea, vomiting, and, after a latent period, signs of hepatic injury including elevated transaminases and jaundice.

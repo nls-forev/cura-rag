@@ -1,0 +1,20 @@
+Amoxicillin Clinical Monograph
+URL: https://medlineplus.gov/druginfo/meds/a685001.html
+
+## Indications and Usage
+Amoxicillin is an aminopenicillin antibiotic used to treat susceptible bacterial infections, including acute otitis media, sinusitis, community-acquired pneumonia, streptococcal pharyngitis, and urinary tract infections. In combination with other agents it is used as part of regimens to eradicate Helicobacter pylori.
+
+## Dosage and Administration
+For most adult infections the usual oral dose is 250 to 500 mg every 8 hours, or 500 to 875 mg every 12 hours, depending on the severity of the infection. Higher doses are used for more severe or less susceptible infections.
+
+## Contraindications
+Amoxicillin is contraindicated in patients with a history of serious hypersensitivity reaction, such as anaphylaxis, to amoxicillin, penicillins, or other beta-lactam antibiotics.
+
+## Warnings and Precautions
+Serious and occasionally fatal hypersensitivity (anaphylactic) reactions have been reported with penicillins. Clostridioides difficile-associated diarrhea can occur and ranges from mild diarrhea to fatal colitis. A high incidence of a non-allergic maculopapular rash occurs when amoxicillin is given to patients with infectious mononucleosis, and amoxicillin should generally be avoided in that setting.
+
+## Drug Interactions
+Concurrent use of allopurinol increases the incidence of skin rash. Amoxicillin may increase the anticoagulant effect of warfarin. It can reduce the renal excretion of methotrexate, increasing methotrexate toxicity. Probenecid raises and prolongs amoxicillin blood levels.
+
+## Adverse Reactions
+Common adverse reactions include diarrhea, nausea, vomiting, and skin rash. Serious reactions include anaphylaxis, Clostridioides difficile colitis, and severe cutaneous reactions.

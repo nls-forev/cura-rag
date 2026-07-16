@@ -1,0 +1,20 @@
+Warfarin Clinical Monograph
+URL: https://medlineplus.gov/druginfo/meds/a682277.html
+
+## Indications and Usage
+Warfarin is an oral anticoagulant used for the prevention and treatment of venous thromboembolism, for the prevention of stroke in atrial fibrillation, and for the prevention of thromboembolism in patients with mechanical heart valves.
+
+## Dosage and Administration
+Warfarin dosing is individualized and titrated to the international normalized ratio (INR). For most indications, including atrial fibrillation and venous thromboembolism, the target INR is 2.0 to 3.0. For patients with a mechanical mitral valve a higher target INR of 2.5 to 3.5 is used. Dosing typically begins at 2 to 5 mg daily with adjustment based on INR monitoring.
+
+## Contraindications
+Warfarin is contraindicated in pregnancy because it crosses the placenta and is teratogenic, except in some women with mechanical heart valves under specialist care. It is also contraindicated in patients with active clinically significant bleeding, and in patients undergoing procedures with a high risk of uncontrolled bleeding.
+
+## Warnings and Precautions
+Warfarin can cause major or fatal bleeding. Regular INR monitoring is required for all patients. Warfarin-induced skin necrosis and calciphylaxis are rare but serious. In the event of serious bleeding or excessive anticoagulation, the effect of warfarin can be reversed with vitamin K (phytonadione) and, for urgent reversal, prothrombin complex concentrate.
+
+## Drug Interactions
+Many drugs potentiate warfarin and raise the INR, including amiodarone, metronidazole, trimethoprim-sulfamethoxazole, fluconazole, and NSAIDs, which also add bleeding risk. Aspirin increases bleeding risk. Foods and supplements rich in vitamin K, such as large amounts of green leafy vegetables, reduce the anticoagulant effect. Patients should maintain a consistent vitamin K intake.
+
+## Adverse Reactions
+The most important adverse reaction is bleeding, which may range from minor bruising to life-threatening hemorrhage. Other adverse reactions include skin necrosis and, rarely, purple toe syndrome.

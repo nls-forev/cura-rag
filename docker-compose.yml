@@ -1,0 +1,45 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.11.0
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c ':> /dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: .
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      QDRANT_URL: http://qdrant:6333
+    ports:
+      - "8000:8000"
+    volumes:
+      - hf_models:/models
+
+  frontend:
+    build: .
+    profiles: ["frontend"]
+    depends_on:
+      - api
+    env_file:
+      - .env
+    environment:
+      CURARAG_API_URL: http://api:8000
+    command: ["streamlit", "run", "frontend/app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./frontend:/app/frontend
+
+volumes:
+  qdrant_storage:
+  hf_models:

@@ -1,0 +1,13 @@
+.git
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+data/processed
+eval/reports
+qdrant_db
+.env
+.DS_Store

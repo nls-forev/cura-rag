@@ -1,0 +1,20 @@
+Lisinopril Clinical Monograph
+URL: https://medlineplus.gov/druginfo/meds/a692051.html
+
+## Indications and Usage
+Lisinopril is an angiotensin-converting enzyme (ACE) inhibitor used to treat hypertension, to manage heart failure, to improve survival after acute myocardial infarction, and to slow the progression of diabetic nephropathy.
+
+## Dosage and Administration
+For hypertension in adults the usual starting dose is 10 mg once daily, with a usual maintenance range of 20 to 40 mg once daily. The maximum dose is 80 mg once daily, although doses above 40 mg provide little additional benefit. In patients who are volume depleted or taking a diuretic, a lower starting dose of 5 mg is recommended.
+
+## Contraindications
+Lisinopril is contraindicated in patients with a history of angioedema related to previous ACE inhibitor therapy, in patients with hereditary or idiopathic angioedema, in pregnancy, and in combination with aliskiren in patients with diabetes. It should not be co-administered with a neprilysin inhibitor such as sacubitril, and a 36-hour washout is required when switching.
+
+## Warnings and Precautions
+Lisinopril can cause angioedema of the face, lips, tongue, and larynx, which may be life-threatening and is more common in Black patients. When used in pregnancy, ACE inhibitors can cause injury and death to the developing fetus, and the drug should be discontinued as soon as pregnancy is detected. Lisinopril can cause hyperkalemia and acute kidney injury, particularly in patients with renal impairment or bilateral renal artery stenosis.
+
+## Drug Interactions
+Combining lisinopril with potassium supplements, potassium-sparing diuretics, or potassium-containing salt substitutes increases the risk of hyperkalemia. NSAIDs reduce the antihypertensive effect and increase the risk of renal impairment. Lisinopril can raise serum lithium levels and cause lithium toxicity. Dual blockade of the renin-angiotensin system with aliskiren or an ARB increases the risk of hypotension, hyperkalemia, and renal impairment.
+
+## Adverse Reactions
+The most common adverse reactions are a persistent dry cough, dizziness, headache, and hyperkalemia. Serious reactions include angioedema, symptomatic hypotension, and acute kidney injury.

@@ -1,0 +1,20 @@
+Ibuprofen Clinical Monograph
+URL: https://medlineplus.gov/druginfo/meds/a682159.html
+
+## Indications and Usage
+Ibuprofen is a nonsteroidal anti-inflammatory drug (NSAID) used to relieve mild to moderate pain, reduce fever, and treat inflammatory conditions such as osteoarthritis, rheumatoid arthritis, and dysmenorrhea.
+
+## Dosage and Administration
+For over-the-counter use in adults the dose is 200 to 400 mg every 4 to 6 hours as needed, not exceeding 1200 mg in 24 hours without medical supervision. Under prescription supervision the maximum adult dose is 3200 mg per day divided into three or four doses. Ibuprofen should be taken with food or milk to reduce gastrointestinal upset.
+
+## Contraindications
+Ibuprofen is contraindicated in patients with known hypersensitivity to ibuprofen, in patients who have experienced asthma, urticaria, or allergic-type reactions after taking aspirin or other NSAIDs, for the treatment of perioperative pain in the setting of coronary artery bypass graft (CABG) surgery, and during the third trimester of pregnancy.
+
+## Warnings and Precautions
+NSAIDs including ibuprofen increase the risk of serious cardiovascular thrombotic events, including myocardial infarction and stroke, which can be fatal. They also increase the risk of serious gastrointestinal bleeding, ulceration, and perforation, which can occur without warning. Ibuprofen can cause renal impairment, especially in dehydrated patients, the elderly, and those with heart failure. Use the lowest effective dose for the shortest duration.
+
+## Drug Interactions
+Ibuprofen increases bleeding risk when combined with anticoagulants such as warfarin. It can reduce the antihypertensive effect of ACE inhibitors and diuretics and may worsen renal function when combined with them. Ibuprofen reduces the cardioprotective antiplatelet effect of low-dose aspirin. It raises plasma levels of lithium and methotrexate.
+
+## Adverse Reactions
+Common adverse reactions include dyspepsia, nausea, abdominal pain, and headache. Serious reactions include gastrointestinal bleeding, hypertension, fluid retention, and acute kidney injury.

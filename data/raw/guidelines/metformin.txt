@@ -1,0 +1,20 @@
+Metformin Clinical Monograph
+URL: https://medlineplus.gov/druginfo/meds/a696005.html
+
+## Indications and Usage
+Metformin is a biguanide used as first-line pharmacologic therapy for type 2 diabetes mellitus in adults and children 10 years and older, as an adjunct to diet and exercise to improve glycemic control.
+
+## Dosage and Administration
+For immediate-release metformin the usual starting dose is 500 mg once or twice daily with meals, titrated gradually to reduce gastrointestinal side effects. The maximum recommended dose of immediate-release metformin is 2550 mg per day. Extended-release formulations are usually dosed once daily with the evening meal, up to 2000 mg per day.
+
+## Contraindications
+Metformin is contraindicated in patients with an estimated glomerular filtration rate (eGFR) below 30 mL/min/1.73m2, in patients with acute or chronic metabolic acidosis including diabetic ketoacidosis, and in patients with known hypersensitivity to metformin.
+
+## Warnings and Precautions
+Metformin carries a boxed warning for lactic acidosis, a rare but potentially fatal complication that is more likely in renal impairment, sepsis, dehydration, excessive alcohol intake, and hepatic impairment. Metformin should be temporarily discontinued at the time of, or before, an iodinated contrast imaging procedure in patients with an eGFR between 30 and 60 mL/min/1.73m2 and restarted after 48 hours if renal function is stable.
+
+## Drug Interactions
+Iodinated contrast media can cause acute kidney injury and increase the risk of lactic acidosis. Alcohol potentiates the effect of metformin on lactate metabolism. Carbonic anhydrase inhibitors such as topiramate and acetazolamide may increase the risk of lactic acidosis.
+
+## Adverse Reactions
+The most common adverse reactions are gastrointestinal, including diarrhea, nausea, and abdominal discomfort, which are usually transient. Long-term use can reduce vitamin B12 absorption and lead to deficiency.

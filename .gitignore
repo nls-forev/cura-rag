@@ -1,0 +1,42 @@
+# Env / secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.python-version
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Project data / indexes (generated)
+data/processed/
+!data/processed/.gitkeep
+.venv-test/
+qdrant_db/
+*.sqlite
+*.duckdb
+
+# Model / HF caches
+.cache/
+models/
+
+# Eval outputs
+eval/reports/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
