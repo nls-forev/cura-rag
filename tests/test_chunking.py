@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import pytest
+
 from curarag.config import ChunkingStrategy, get_settings
 from curarag.ingestion.chunking import chunk_document
 from curarag.ingestion.dedupe import dedupe_chunks
@@ -40,6 +42,16 @@ def test_fixed_respects_size():
     chunks = chunk_document(_doc(), ChunkingStrategy.fixed, settings)
     assert chunks
     assert all(len(c.text) <= 40 for c in chunks)
+
+
+def test_semantic_tags_strategy_and_sections():
+    pytest.importorskip("sentence_transformers")
+    chunks = chunk_document(_doc(), ChunkingStrategy.semantic, get_settings())
+    assert chunks
+    assert all(c.strategy == "semantic" for c in chunks)
+    assert {c.section for c in chunks} <= {"Dosage", "Warnings"}
+    ids = [c.chunk_id for c in chunks]
+    assert len(ids) == len(set(ids))
 
 
 def test_dedupe_drops_near_duplicates():

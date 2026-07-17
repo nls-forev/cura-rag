@@ -35,8 +35,10 @@ models/
 
 # Eval outputs
 eval/reports/
+eval_run.log
 
 # OS / editor
 .DS_Store
 .idea/
 .vscode/
+build.log

@@ -10,7 +10,10 @@ WORKDIR /app
 COPY pyproject.toml README.md ./
 COPY src ./src
 
-RUN pip install --upgrade pip && pip install ".[frontend]"
+# CPU-only torch keeps the image gigabytes smaller; the API container has no GPU.
+RUN pip install --upgrade pip && \
+    pip install torch --index-url https://download.pytorch.org/whl/cpu && \
+    pip install ".[frontend]"
 
 # Bake the embedding and reranker models into the image so the container is
 # queryable without a model download at first request.
