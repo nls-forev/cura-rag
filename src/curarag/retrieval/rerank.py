@@ -10,7 +10,8 @@ from curarag.models import RetrievedHit
 def get_reranker():
     from sentence_transformers import CrossEncoder
 
-    return CrossEncoder(get_settings().reranker_model)
+    settings = get_settings()
+    return CrossEncoder(settings.reranker_model, device=settings.model_device)
 
 
 def rerank(query: str, hits: list[RetrievedHit], top_k: int) -> list[RetrievedHit]:

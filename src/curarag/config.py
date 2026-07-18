@@ -45,6 +45,9 @@ class Settings(BaseSettings):
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     reranker_model: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
     embedding_dim: int = 384
+    # Pin the model device. Default cpu: the models are small, and CUDA cannot be
+    # touched outside a @spaces.GPU function on Hugging Face ZeroGPU.
+    model_device: str = "cpu"
 
     qdrant_url: str = "http://localhost:6333"
     qdrant_collection: str = "curarag"
