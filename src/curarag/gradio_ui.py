@@ -72,7 +72,7 @@ def ask(question: str) -> tuple[str, str]:
 def build_demo():
     import gradio as gr
 
-    with gr.Blocks(title="CuraRAG", theme=gr.themes.Soft()) as demo:
+    with gr.Blocks(title="CuraRAG") as demo:
         gr.Markdown(INTRO)
         with gr.Row():
             question = gr.Textbox(
@@ -83,8 +83,8 @@ def build_demo():
             )
             submit = gr.Button("Ask", variant="primary", scale=1)
         gr.Examples(EXAMPLES, inputs=question)
-        answer_md = gr.Markdown(label="Answer")
-        evidence_md = gr.Markdown(label="Evidence")
+        answer_md = gr.Markdown()
+        evidence_md = gr.Markdown()
 
         submit.click(ask, inputs=question, outputs=[answer_md, evidence_md])
         question.submit(ask, inputs=question, outputs=[answer_md, evidence_md])
