@@ -189,7 +189,7 @@ CuraRAG can run the whole system in one process: Qdrant **embedded** (in-process
 
 ### Hugging Face Space (free, Gradio SDK)
 
-The repo is a ready Gradio Space: [`app.py`](app.py) sets the single-container defaults, seeds the guideline corpus, and serves a UI over the same `Answerer` the API uses. Hugging Face installs from [`requirements.txt`](requirements.txt) (it does not read `pyproject.toml`), which installs this project with its `space` extra so there is no second dependency list to keep in sync.
+The repo is a ready Gradio Space: [`app.py`](app.py) sets the single-container defaults, seeds the guideline corpus, and serves a UI over the same `Answerer` the API uses. Hugging Face installs from [`requirements.txt`](requirements.txt) (it does not read `pyproject.toml`, and it installs deps before copying the repo, so `pip install .` is not an option) — the runtime deps are listed there explicitly, minus `torch` and `gradio`, which the Space base image pins.
 
 ```bash
 # create a Gradio Space at huggingface.co/new-space (SDK: Gradio), then:
