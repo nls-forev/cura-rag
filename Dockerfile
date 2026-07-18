@@ -3,7 +3,11 @@ FROM python:3.11-slim
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=1 \
-    HF_HOME=/models
+    HF_HOME=/models \
+    PORT=7860 \
+    QDRANT_PATH=/data/qdrant \
+    SEED_ON_STARTUP=true \
+    SEED_INCLUDE_OPENFDA=false
 
 WORKDIR /app
 
@@ -25,6 +29,12 @@ COPY data ./data
 COPY scripts ./scripts
 COPY eval ./eval
 
-EXPOSE 8000
+# Writable by any UID: Hugging Face Spaces runs the container as a non-root user,
+# and the embedded Qdrant index is written under /data at runtime.
+RUN mkdir -p /data && chmod 777 /data /models
 
-CMD ["uvicorn", "curarag.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+EXPOSE 7860
+
+# No API key is baked in. The LLM key (e.g. DEEPSEEK_API_KEY) is supplied at
+# runtime as an environment variable / platform secret.
+CMD ["sh", "-c", "uvicorn curarag.api.main:app --host 0.0.0.0 --port ${PORT}"]

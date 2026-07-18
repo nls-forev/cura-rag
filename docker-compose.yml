@@ -20,6 +20,9 @@ services:
       - .env
     environment:
       QDRANT_URL: http://qdrant:6333
+      QDRANT_PATH: ""
+      SEED_ON_STARTUP: "false"
+      PORT: "8000"
     ports:
       - "8000:8000"
     volumes:

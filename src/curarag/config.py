@@ -44,6 +44,14 @@ class Settings(BaseSettings):
 
     qdrant_url: str = "http://localhost:6333"
     qdrant_collection: str = "curarag"
+    # When set, Qdrant runs embedded (in-process, on-disk) instead of talking to
+    # a server. Used for single-container deploys (e.g. Hugging Face Spaces).
+    qdrant_path: str = ""
+
+    # One-container deploys have no separate seed step, so the API can seed itself
+    # on first boot if the collection is empty.
+    seed_on_startup: bool = False
+    seed_include_openfda: bool = False
 
     chunking_strategy: ChunkingStrategy = ChunkingStrategy.recursive
     chunk_size: int = 900

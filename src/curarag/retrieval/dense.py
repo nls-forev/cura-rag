@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import uuid
+from functools import lru_cache
 
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
@@ -16,10 +17,23 @@ def _point_id(chunk_id: str) -> str:
     return str(uuid.uuid5(_NAMESPACE, chunk_id))
 
 
+@lru_cache
+def _embedded_client(path: str) -> QdrantClient:
+    # Embedded Qdrant locks its storage dir, so every DenseIndex must share one
+    # client per path rather than open the folder twice.
+    return QdrantClient(path=path)
+
+
+def _build_client(settings: Settings) -> QdrantClient:
+    if settings.qdrant_path:
+        return _embedded_client(settings.qdrant_path)
+    return QdrantClient(url=settings.qdrant_url)
+
+
 class DenseIndex:
     def __init__(self, client: QdrantClient | None = None, settings: Settings | None = None):
         self.settings = settings or get_settings()
-        self.client = client or QdrantClient(url=self.settings.qdrant_url)
+        self.client = client or _build_client(self.settings)
         self.collection = self.settings.qdrant_collection
 
     def ensure_collection(self, recreate: bool = False) -> None:

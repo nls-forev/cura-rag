@@ -1,3 +1,13 @@
+---
+title: CuraRAG
+emoji: 💊
+colorFrom: red
+colorTo: gray
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # CuraRAG
 
 A clinical RAG system that answers only from verified drug labels and guidelines, cites the exact source passage for every claim, verifies those citations, and abstains when the evidence isn't there.
@@ -165,6 +175,31 @@ make test              # pytest: chunking, dedup, RRF, retriever wiring, citatio
 make lint              # ruff
 ```
 
+## Deployment (single container)
+
+For a one-container host like Hugging Face Spaces, CuraRAG runs Qdrant **embedded** (in-process, on disk) instead of as a separate service, and seeds itself on first boot. This is driven entirely by env vars — no code change:
+
+| Env var | Purpose |
+| --- | --- |
+| `QDRANT_PATH` | Path for embedded Qdrant (e.g. `/data/qdrant`). If set, the server URL is ignored. |
+| `SEED_ON_STARTUP` | `true` → the API seeds the corpus on boot if the collection is empty. |
+| `SEED_INCLUDE_OPENFDA` | `false` keeps the boot fast (guideline monographs only). |
+| `PORT` | Port uvicorn binds (Spaces expects `7860`). |
+| `DEEPSEEK_API_KEY` | Supplied as a platform **secret**, never baked into the image. |
+
+The shipped `Dockerfile` already defaults to these (`PORT=7860`, embedded Qdrant, self-seed), so Spaces builds it as-is. `docker-compose.yml` overrides them back to the multi-container setup (Qdrant server, port 8000) for local use.
+
+Deploy to a Hugging Face Space:
+
+```bash
+# create a Docker Space at huggingface.co/new-space, then:
+git remote add hf https://huggingface.co/spaces/<user>/curarag
+git push hf master
+# in the Space settings, add DEEPSEEK_API_KEY as a secret
+```
+
+Note: the free tier has no persistent disk, so the embedded index is rebuilt on each cold start (guideline-only seed, ~1 minute), and the Space sleeps after inactivity.
+
 ## Non-goals
 
-No cloud deployment, CI/CD, TLS, or autoscaling. Local Docker Compose is the finish line for this pass.
+No CI/CD, TLS, or autoscaling. The single-container Space above is a demo deploy, not a production posture (no persistent index, no horizontal scaling).
