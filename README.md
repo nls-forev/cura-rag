@@ -3,8 +3,8 @@ title: CuraRAG
 emoji: 💊
 colorFrom: red
 colorTo: gray
-sdk: docker
-app_port: 7860
+sdk: gradio
+app_file: app.py
 pinned: false
 ---
 
@@ -177,28 +177,28 @@ make lint              # ruff
 
 ## Deployment (single container)
 
-For a one-container host like Hugging Face Spaces, CuraRAG runs Qdrant **embedded** (in-process, on disk) instead of as a separate service, and seeds itself on first boot. This is driven entirely by env vars — no code change:
+CuraRAG can run the whole system in one process: Qdrant **embedded** (in-process, on disk) instead of a separate service, seeded on first boot. This is driven entirely by env vars — no code change:
 
 | Env var | Purpose |
 | --- | --- |
-| `QDRANT_PATH` | Path for embedded Qdrant (e.g. `/data/qdrant`). If set, the server URL is ignored. |
-| `SEED_ON_STARTUP` | `true` → the API seeds the corpus on boot if the collection is empty. |
-| `SEED_INCLUDE_OPENFDA` | `false` keeps the boot fast (guideline monographs only). |
-| `PORT` | Port uvicorn binds (Spaces expects `7860`). |
-| `DEEPSEEK_API_KEY` | Supplied as a platform **secret**, never baked into the image. |
+| `QDRANT_PATH` | Path for embedded Qdrant. If set, the Qdrant server URL is ignored. |
+| `SEED_ON_STARTUP` | `true` → seed the corpus on boot if the collection is empty. |
+| `SEED_INCLUDE_OPENFDA` | `false` keeps boot fast (guideline monographs only). |
+| `CURARAG_DATA_DIR` | Corpus location, for when the package is installed away from the repo. |
+| `DEEPSEEK_API_KEY` | Supplied as a platform **secret**, never baked into an image. |
 
-The shipped `Dockerfile` already defaults to these (`PORT=7860`, embedded Qdrant, self-seed), so Spaces builds it as-is. `docker-compose.yml` overrides them back to the multi-container setup (Qdrant server, port 8000) for local use.
+### Hugging Face Space (free, Gradio SDK)
 
-Deploy to a Hugging Face Space:
+The repo is a ready Gradio Space: [`app.py`](app.py) sets the single-container defaults, seeds the guideline corpus, and serves a UI over the same `Answerer` the API uses. Hugging Face installs from [`requirements.txt`](requirements.txt) (it does not read `pyproject.toml`), which installs this project with its `space` extra so there is no second dependency list to keep in sync.
 
 ```bash
-# create a Docker Space at huggingface.co/new-space, then:
+# create a Gradio Space at huggingface.co/new-space (SDK: Gradio), then:
 git remote add hf https://huggingface.co/spaces/<user>/curarag
-git push hf master
+git push hf master        # use a Hugging Face access token as the password
 # in the Space settings, add DEEPSEEK_API_KEY as a secret
 ```
 
-Note: the free tier has no persistent disk, so the embedded index is rebuilt on each cold start (guideline-only seed, ~1 minute), and the Space sleeps after inactivity.
+The free CPU tier (16 GB) fits the embedding + reranker models. First cold start downloads the models and seeds the corpus (~2 minutes); the Space then sleeps after inactivity. The `Dockerfile` (bakes the models, no download at boot) remains for local or Docker-based hosts.
 
 ## Non-goals
 

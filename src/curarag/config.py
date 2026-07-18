@@ -1,3 +1,4 @@
+import os
 from enum import Enum
 from functools import lru_cache
 from pathlib import Path
@@ -6,7 +7,10 @@ from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_DIR = PROJECT_ROOT / "data"
+# CURARAG_DATA_DIR lets a deploy point at the corpus explicitly. Without it the
+# data dir is resolved relative to the source tree, which breaks once the package
+# is pip-installed away from the repo (e.g. a Hugging Face Space).
+DATA_DIR = Path(os.environ.get("CURARAG_DATA_DIR") or (PROJECT_ROOT / "data"))
 RAW_DIR = DATA_DIR / "raw"
 PROCESSED_DIR = DATA_DIR / "processed"
 

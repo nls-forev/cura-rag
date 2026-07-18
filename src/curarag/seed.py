@@ -27,6 +27,24 @@ def load_seed_documents(include_openfda: bool = True) -> list[Document]:
     return docs
 
 
+def ensure_seeded(settings=None) -> None:
+    """Seed the corpus on boot if enabled and the collection is empty. Used by
+    single-container deploys (API lifespan, Gradio app) that have no separate
+    seed step. A failed seed must never block startup."""
+    settings = settings or get_settings()
+    if not settings.seed_on_startup:
+        return
+    from curarag.retrieval.dense import DenseIndex
+
+    dense = DenseIndex(settings=settings)
+    if dense.client.collection_exists(dense.collection) and dense.count() > 0:
+        return
+    try:
+        run_seed(recreate=True, include_openfda=settings.seed_include_openfda)
+    except Exception as exc:  # noqa: BLE001 - startup must survive a bad seed
+        print(f"Startup seed failed: {exc}")
+
+
 def run_seed(
     strategy: str | None = None,
     recreate: bool = True,

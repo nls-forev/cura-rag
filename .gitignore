@@ -42,3 +42,4 @@ eval_run.log
 .idea/
 .vscode/
 build.log
+qdrant_data/

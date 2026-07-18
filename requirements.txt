@@ -1,0 +1,7 @@
+# Hugging Face Spaces installs from this file (it does not read pyproject.toml).
+# We install the project itself with its "space" extra, so pyproject stays the
+# single source of truth for versions and this file never drifts.
+#
+# The CPU torch index keeps the build small; the Space has no GPU.
+--extra-index-url https://download.pytorch.org/whl/cpu
+.[space]
