@@ -1,13 +1,3 @@
----
-title: CuraRAG
-emoji: 💊
-colorFrom: red
-colorTo: gray
-sdk: gradio
-app_file: app.py
-pinned: false
----
-
 # CuraRAG
 
 **🔴 Live demo: [huggingface.co/spaces/Klasta/curarag](https://huggingface.co/spaces/Klasta/curarag)** · [GitHub](https://github.com/nls-forev/cura-rag)
