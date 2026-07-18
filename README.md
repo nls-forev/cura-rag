@@ -64,9 +64,9 @@ eval/                  golden set, metrics, runner, chunking comparison
 ## Setup
 
 Requires Docker. LLM answers need an API key for one provider; ingestion, retrieval, and the deterministic eval metrics do not.
+In .env, set DEEPSEEK_API_KEY (or OPENAI/ANTHROPIC) for /ask
 
 ```bash
-cp .env.example .env          # set DEEPSEEK_API_KEY (or OPENAI/ANTHROPIC) for /ask
 make up                       # builds images, starts Qdrant + API, seeds the demo corpus
 ```
 
