@@ -10,7 +10,17 @@ pinned: false
 
 # CuraRAG
 
+**🔴 Live demo: [huggingface.co/spaces/Klasta/curarag](https://huggingface.co/spaces/Klasta/curarag)** · [GitHub](https://github.com/nls-forev/cura-rag)
+
 A clinical RAG system that answers only from verified drug labels and guidelines, cites the exact source passage for every claim, verifies those citations, and abstains when the evidence isn't there.
+
+**Evaluated on a hand-written 56-case golden set** (semantic chunking, full methodology and table in [Evaluation](#evaluation)):
+
+| answer correctness | faithfulness | citation accuracy | key fact recall | unanswerable → abstain |
+| :---: | :---: | :---: | :---: | :---: |
+| **1.000** | **0.955** | **0.909** | **1.000** | **12/12** |
+
+Hybrid retrieval (dense + BM25 → RRF → cross-encoder rerank) · LLM-judge citation verification · confidence-gated abstention · FastAPI + Gradio · Docker
 
 CuraRAG is built for the failure mode that matters in drug information: a confident, wrong dose or contraindication. It grounds every answer in retrieved evidence, attaches inline citations to the exact passages, uses an LLM-as-judge to check that each cited passage actually supports its claim, scores its own confidence, and refuses to answer when retrieval is weak. Hallucination is treated as a failure, not a rough edge.
 
