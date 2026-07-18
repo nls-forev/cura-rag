@@ -7,9 +7,14 @@ with real environment variables / Space secrets.
 """
 
 import os
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+
+# The package is not pip-installed on the Space (HF installs requirements before
+# copying the repo), so make src/ importable directly.
+sys.path.insert(0, str(ROOT / "src"))
 
 os.environ.setdefault("QDRANT_PATH", str(ROOT / "qdrant_data"))
 os.environ.setdefault("SEED_ON_STARTUP", "true")
