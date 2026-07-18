@@ -24,6 +24,19 @@ os.environ.setdefault("CURARAG_DATA_DIR", str(ROOT / "data"))
 from curarag.gradio_ui import build_demo  # noqa: E402
 from curarag.seed import ensure_seeded  # noqa: E402
 
+# Hugging Face ZeroGPU (the only free Gradio hardware) requires at least one
+# @spaces.GPU function to exist at startup. CuraRAG's models are small and run
+# on CPU, so this probe only satisfies the platform check; it is never called.
+# Guarded so local runs without the `spaces` package are unaffected.
+try:
+    import spaces
+
+    @spaces.GPU
+    def _zerogpu_probe():
+        return None
+except Exception:
+    pass
+
 ensure_seeded()
 demo = build_demo()
 
